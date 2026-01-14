@@ -35,6 +35,7 @@ contract CrowdFunding {
         numberOfCampaigns++;
 
         return numberOfCampaigns - 1;
+     
      }
 
     function donateToCampaign(uint256 _id) public payable {
@@ -55,7 +56,7 @@ contract CrowdFunding {
         return (campaigns[_id].donators, campaigns[_id].donations);
     }
 
-    function getCampaigns() public view returns {Campaign[] memory} {
+    function getCampaigns() public view returns (Campaign[] memory) {
         Campaign[] memory allCampaigns = new Campaign[](numberOfCampaigns);
 
         for(uint i = 0; i < numberOfCampaigns; i++) {
